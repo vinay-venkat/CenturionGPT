@@ -2,7 +2,6 @@ import "dotenv/config";
 import express from "express";
 import path from "path";
 import fs from "fs";
-import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import * as XLSX from "xlsx";
 import { StudentRecord, Notice, AcademicFile, ScrapedUrl, ChatMessage, FacultyRecord, AdminRecord } from "./src/types";
@@ -1093,6 +1092,7 @@ Core Design Directives:
 // Vite middleware setup or static production assets
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
