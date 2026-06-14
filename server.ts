@@ -5,7 +5,7 @@ import fs from "fs";
 import { GoogleGenAI } from "@google/genai";
 import * as XLSX from "xlsx";
 import { StudentRecord, Notice, AcademicFile, ScrapedUrl, ChatMessage, FacultyRecord, AdminRecord } from "./src/types";
-import { connectDb, Student as StudentModel, Faculty as FacultyModel, Admin as AdminModel, Notice as NoticeModel, AcademicFile as AcademicFileModel, ScrapedUrl as ScrapedUrlModel } from "./db";
+import { connectDb, DB_FILE, Student as StudentModel, Faculty as FacultyModel, Admin as AdminModel, Notice as NoticeModel, AcademicFile as AcademicFileModel, ScrapedUrl as ScrapedUrlModel } from "./db";
 
 
 const app = express();
@@ -20,6 +20,12 @@ connectDb().catch(err => {
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
+// Logger middleware
+app.use((req, res, next) => {
+  console.log(`[API REQUEST] ${req.method} ${req.url} - ${new Date().toISOString()}`);
+  next();
+});
+
 // CORS middleware for emulator/external app connectivity
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -30,10 +36,6 @@ app.use((req, res, next) => {
   }
   next();
 });
-
-
-// Database filepath
-const DB_FILE = path.join(process.cwd(), "server_db.json");
 
 // Helper: safe string similarity/keyword matcher for semantic RAG search
 function semanticSearch(query: string, items: { text: string; source: string; meta?: any }[], limit = 5) {

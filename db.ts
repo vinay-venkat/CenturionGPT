@@ -2,6 +2,32 @@ import mongoose, { Schema } from 'mongoose';
 import fs from 'fs';
 import path from 'path';
 
+const isVercel = !!process.env.VERCEL;
+export const DB_FILE = isVercel
+  ? path.join('/tmp', 'server_db.json')
+  : path.join(process.cwd(), 'server_db.json');
+
+// Initialize /tmp/server_db.json on Vercel
+if (isVercel) {
+  try {
+    if (!fs.existsSync(DB_FILE)) {
+      const srcPath = path.join(process.cwd(), 'server_db.json');
+      if (fs.existsSync(srcPath)) {
+        fs.writeFileSync(DB_FILE, fs.readFileSync(srcPath, 'utf-8'), 'utf-8');
+        console.log('Successfully initialized /tmp/server_db.json from project root.');
+      } else {
+        const initialData = { students: [], faculty: [], admins: [], notices: [], files: [], scrapedUrls: [] };
+        fs.writeFileSync(DB_FILE, JSON.stringify(initialData, null, 2), 'utf-8');
+        console.log('Created fresh empty /tmp/server_db.json database.');
+      }
+    } else {
+      console.log('/tmp/server_db.json already exists.');
+    }
+  } catch (err) {
+    console.error('Failed to initialize local DB in /tmp:', err);
+  }
+}
+
 // Define schemas
 
 // 1. Student
@@ -89,7 +115,6 @@ class ModelWrapper {
     if (this.isConnected()) {
       return this.mongooseModel.findOne(query);
     }
-    const DB_FILE = path.join(process.cwd(), "server_db.json");
     let data: any = {};
     if (fs.existsSync(DB_FILE)) {
       try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
@@ -138,7 +163,6 @@ class ModelWrapper {
     if (this.isConnected()) {
       return this.mongooseModel.find(query);
     }
-    const DB_FILE = path.join(process.cwd(), "server_db.json");
     let data: any = {};
     if (fs.existsSync(DB_FILE)) {
       try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
@@ -172,7 +196,6 @@ class ModelWrapper {
     if (this.isConnected()) {
       return this.mongooseModel.findOneAndUpdate(query, update, options);
     }
-    const DB_FILE = path.join(process.cwd(), "server_db.json");
     let data: any = {};
     if (fs.existsSync(DB_FILE)) {
       try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
@@ -200,7 +223,6 @@ class ModelWrapper {
     if (this.isConnected()) {
       return this.mongooseModel.create(doc);
     }
-    const DB_FILE = path.join(process.cwd(), "server_db.json");
     let data: any = {};
     if (fs.existsSync(DB_FILE)) {
       try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
@@ -215,7 +237,6 @@ class ModelWrapper {
     if (this.isConnected()) {
       return this.mongooseModel.insertMany(docs);
     }
-    const DB_FILE = path.join(process.cwd(), "server_db.json");
     let data: any = {};
     if (fs.existsSync(DB_FILE)) {
       try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
@@ -230,7 +251,6 @@ class ModelWrapper {
     if (this.isConnected()) {
       return this.mongooseModel.deleteOne(query);
     }
-    const DB_FILE = path.join(process.cwd(), "server_db.json");
     let data: any = {};
     if (fs.existsSync(DB_FILE)) {
       try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
@@ -249,7 +269,6 @@ class ModelWrapper {
     if (this.isConnected()) {
       return this.mongooseModel.countDocuments(query);
     }
-    const DB_FILE = path.join(process.cwd(), "server_db.json");
     let data: any = {};
     if (fs.existsSync(DB_FILE)) {
       try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
@@ -285,7 +304,11 @@ export async function connectDb() {
   }
   
   if (mongoose.connection.readyState === 0) {
-    await mongoose.connect(uri);
+    console.log('Connecting to MongoDB Atlas...');
+    await mongoose.connect(uri, {
+      serverSelectionTimeoutMS: 3000,
+      connectTimeoutMS: 3000
+    });
     console.log('Successfully connected to MongoDB.');
     await seedDb();
   }
@@ -309,7 +332,6 @@ async function seedDb() {
     console.log('Starting DB seeding...');
 
     // Load seed data from server_db.json if it exists, otherwise use defaults
-    const DB_FILE = path.join(process.cwd(), "server_db.json");
     let seedData: any = {};
 
     if (fs.existsSync(DB_FILE)) {
