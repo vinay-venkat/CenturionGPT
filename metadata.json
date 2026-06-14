@@ -1,0 +1,6 @@
+{
+  "name": "CenturionGPT",
+  "description": "AI-Powered University Intelligence & Academic Assistant System for Centurion University, featuring multi-format RAG, academic analytics, voice assistant, website scrapers, and student/faculty/admin portals.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

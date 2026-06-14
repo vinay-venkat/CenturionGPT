@@ -1,0 +1,137 @@
+{
+  "students": [
+    {
+      "regNo": "240101371026",
+      "name": "K Vinay VEnket",
+      "email": "240101371026@centurionuniv.edu.in",
+      "department": "B.Tech in CSE (AIML)",
+      "semester": 4,
+      "attendanceRate": 79,
+      "sgpaHistory": [],
+      "cgpa": 0,
+      "subjects": [],
+      "pin": "Vinay@123"
+    },
+    {
+      "regNo": "240101371027",
+      "name": "k.vinay venkat",
+      "email": "240101371027@centurionuniv.edu.in",
+      "department": "B.Tech in CSE (AIML)",
+      "semester": 4,
+      "attendanceRate": 79,
+      "sgpaHistory": [],
+      "cgpa": 0,
+      "subjects": [],
+      "pin": "Vinay@123"
+    }
+  ],
+  "faculty": [
+    {
+      "name": "Dr. Vinayak Venkatraman",
+      "email": "vinayak@cutm.ac.in",
+      "department": "Computer Science & Engineering (AI & ML)",
+      "designation": "Professor & Program Coordinator",
+      "pin": "admin99"
+    }
+  ],
+  "admins": [
+    {
+      "name": "vinay venkat",
+      "email": "konduruvinayvenkat@gmail.com",
+      "role": "Executive Admissions Registrar",
+      "pin": "Vinay@123"
+    }
+  ],
+  "notices": [
+    {
+      "id": "notice-1",
+      "title": "4th Semester Mid-Term Examination Schedule",
+      "content": "The mid-term examination for B.Tech CSE (AIML) 4th-semester students starts on June 15, 2026. Hall tickets will be issued starting June 10, 2026. Ensure clear attendance dues (minimum 75% required) before that.",
+      "date": "2026-05-25",
+      "category": "Examination",
+      "author": "Dean Academics"
+    },
+    {
+      "id": "notice-2",
+      "title": "Placement Intern On-Campus Recruitment Drive",
+      "content": "Sophomore internship opportunities by Google, TCS, and Wipro will initiate recruitment rounds on July 10, 2026. Minimum aggregate CGPA threshold is 8.0 with no active backlogs. Register at cutm.ac.in/placements before June 20, 2026.",
+      "date": "2026-05-29",
+      "category": "Placement",
+      "author": "Placement Director"
+    },
+    {
+      "id": "notice-3",
+      "title": "Revised Applied Machine Learning Syllabus (CUTM1019)",
+      "content": "Module 3 has been updated by the board of studies to include hands-on LLMs and Gemini API integrations. Practicals will include building server-side AI agents.",
+      "date": "2026-05-28",
+      "category": "Academic",
+      "author": "HoD CSE"
+    },
+    {
+      "id": "notice-4",
+      "title": "Syllabus Weightage and Attendance Regulations Rules",
+      "content": "Attendance regulations are strictly reviewed weekly. Students who fall below 75% will be blocked from semester-end theory and practical exam registration locks.",
+      "date": "2026-05-20",
+      "category": "General",
+      "author": "Chief Warden"
+    }
+  ],
+  "files": [
+    {
+      "id": "file-1",
+      "fileName": "CUTM_BTech_4th_Sem_Syllabus.txt",
+      "fileType": "txt",
+      "uploadedBy": "HoD CSE",
+      "uploadedAt": "2026-05-22T10:00:00Z",
+      "description": "Complete subjects, credits structure, and passing standards for 4th Semester CSE (AI & ML).",
+      "extractedText": "B.Tech Computer Science & Engineering (AI & ML) - Semester 4 Credit Structure:\n1. CUAI1002+ - Applied Probability and Statistics for AIML (4 Credits)\n2. CUCS1003 - Design and Analysis of Algorithms (6 Credits)\n3. CUCS1005 - Relational and Distributed Databases (3 Credits)\n4. CUCS1013 - Android Development with Kotlin (6 Credits)\n5. CUTM1019 - Machine Learning using Python (4 Credits)\n6. CUTM1021 - Design Thinking (2 Credits)\n7. CUVA4060 - Gender, Human Rights and Ethics (2 Credits)\nTotal credits: 27. Attendance requirement for exam entry is strictly 75%."
+    },
+    {
+      "id": "file-2",
+      "fileName": "Academic_Grades_Mapping.csv",
+      "fileType": "csv",
+      "uploadedBy": "Admin Exam Cell",
+      "uploadedAt": "2026-05-24T14:30:00Z",
+      "description": "Official CUTM 10-Point Letter Grading System",
+      "extractedText": "Grade,GradePoint,Description,PercentageRange\nO,10,Outstanding,90% - 100%\nE,9,Excellent,80% - 89%\nA,8,Very Good,70% - 79%\nB,7,Good,60% - 69%\nC,6,Fair,50% - 59%\nD,5,Pass,40% - 49%\nF,0,Fail,<40%"
+    },
+    {
+      "id": "file-1781421460581",
+      "fileName": "Academic Calender_2026-27_SoET_2nd, 3rd and 4th year_UG and PG Program.pdf",
+      "fileType": "pdf",
+      "uploadedBy": "Administrative Officer",
+      "uploadedAt": "2026-06-14T07:17:40.581Z",
+      "description": "Academic sheet/document Academic Calender_2026-27_SoET_2nd, 3rd and 4th year_UG and PG Program.pdf",
+      "extractedText": "Here is the complete extracted data from the **Academic Calendar: 2026-27** for the **School of Engineering and Technology (SoET)** at **Centurion University of Technology and Management, Odisha**.\n\n---\n\n# **Centurion University of Technology and Management, Odisha**\n### **Academic Calendar: 2026-27**\n**Program:** Under Graduate and Post Graduate  \n**School:** School of Engineering and Technology (SoET)\n\n---\n\n## **1. ODD SEMESTER**\n**Semesters:** $3^\\text{rd}$, $5^\\text{th}$, and $7^\\text{th}$\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| 1 | Subject Depository to be sent to ERP | $1^\\text{st}$ to $5^\\text{th}$ June 2026 |\n| 2 | Subject Registration | $10^\\text{th}$ to $25^\\text{th}$ June 2026 |\n| 3 | Timetable Configuration and uploading of Session Plan in ERP | $1^\\text{st}$ to $4^\\text{th}$ July 2026 |\n| 4 | Commencement of Classes | $6^\\text{th}$ July 2026 |\n| 5 | Mid Semester Examination | $7^\\text{th}$ to $11^\\text{th}$ September 2026 |\n| 6 | Last Date of Instruction | $31^\\text{st}$ October 2026 |\n| 7 | Practical/ Project/ Thesis Examination | $4^\\text{th}$ to $10^\\text{th}$ November 2026 |\n| 8 | End Semester Theory Examination | $12^\\text{th}$ to $28^\\text{th}$ November 2026 |\n\n---\n\n## **2. EVEN SEMESTER**\n**Semesters:** $4^\\text{th}$, $6^\\text{th}$, and $8^\\text{th}$\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| 1 | Subject Depository to be sent to ERP | $20^\\text{th}$ to $25^\\text{th}$ November 2026 |\n| 2 | Subject Registration | $30^\\text{th}$ Nov. to $2^\\text{nd}$ Dec. 2026 |\n| 3 | Timetable Configuration and uploading of Session Plan in ERP | $3^\\text{rd}$ to $5^\\text{th}$ December 2026 |\n| 4 | Commencement of Classes | $7^\\text{th}$ December 2026 |\n| 5 | Mid Semester Examination | $27^\\text{th}$ January to $2^\\text{nd}$ February 2027 |\n| 6 | Last Date of Instruction | $3^\\text{rd}$ April 2027 |\n| 7 | Practical/ Project/ Thesis Examination | $7^\\text{th}$ to $13^\\text{th}$ April 2027 |\n| 8 | End Semester Theory Examination | $15^\\text{th}$ to $30^\\text{th}$ April 2027 |\n\n> **Note for Lateral Entry students:** The commencement of class and Midterm exam will be notified later depending upon the last date of admission.\n\n---\n\n## **3. EVENT WINDOW**\n\n| Sl. No. | Name of Event | Schedule |\n| :--- | :--- | :--- |\n| 1 | Inter/Intra University Sports | $30^\\text{th}$ November to $5^\\text{th}$ December 2026 |\n| 2 | Indigenous Sports | $5^\\text{th}$ to $6^\\text{th}$ February 2027 |\n| 3 | Gajajyoti, Bhubaneswar Campus | $10^\\text{th}$ to $12^\\text{th}$ February 2027 |\n| 4 | Gajajyoti Paralakhemundi Campus | $18^\\text{th}$ to $20^\\text{th}$ February 2027 |\n| 5 | Gajajyoti Chatrapur Campus | $24^\\text{th}$ February 2027 |\n| 6 | Gajajyoti Balasore Campus | $26^\\text{th}$ to $27^\\text{th}$ February 2027 |\n\n> **\\# Summer Internship Window:** $1^\\text{st}$ May to $30^\\text{th}$ June, 2027\n\n---\n\n**Signed by:**  \n**Anita Patra**  \nRegistrar",
+      "summary": "Here is the complete extracted data from the **Academic Calendar: 2026-27** for the **School of Engineering and Technology (SoET)** at **Centurion University of Technology and Management, Odisha**.\n\n---\n\n# **Centurion University of Technology and Management, Odisha**\n### **Academic Calendar: 2026-27**\n**Program:** Under Graduate and Post Graduate  \n**School:** School of Engineering and Technology (SoET)\n\n---\n\n## **1. ODD SEMESTER**\n**Semesters:** $3^\\text{rd}$, $5^\\text{th}$, and $7^\\text{th}$\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| 1 | Subject Depository to be sent to ERP | $1^\\text{st}$ to $5^\\text{th}$ June 2026 |\n| 2 | Subject Registration | $10^\\text{th}$ to $25^\\text{th}$ June 2026 |\n| 3 | Timetable Configuration and uploading of Session Plan in ERP | $1^\\text{st}$ to $4^\\text{th}$ July 2026 |\n| 4 | Commencement of Classes | $6^\\text{th}$ July 2026 |\n| 5 | Mid Semester Examination | $7^\\text{th}$ to $11^\\text{th}$ September 2026 |\n| 6 | Last Date of Instruction | $31^\\text{st}$ October 2026 |\n| 7 | Practical/ Project/ Thesis Examination | $4^\\text{th}$ to $10^\\text{th}$ November 2026 |\n| 8 | End Semester Theory Examination | $12^\\text{th}$ to $28^\\text{th}$ November 2026 |\n\n---\n\n## **2. EVEN SEMESTER**\n**Semesters:** $4^\\text{th}$, $6^\\text{th}$, and $8^\\text{th}$\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| 1 | Subject Depository to be sent to ERP | $20^\\text{th}$ to $25^\\text{th}$ November 2026 |\n| 2 | Subject Registration | $30^\\text{th}$ Nov. to $2^\\text{nd}$ Dec. 2026 |\n| 3 | Timetable Configuration and uploading of Session Plan in ERP | $3^\\text{rd}$ to $5^\\text{th}$ December 2026 |\n| 4 | Commencement of Classes | $7^\\text{th}$ December 2026 |\n| 5 | Mid Semester Examination | $27^\\text{th}$ January to $2^\\text{nd}$ February 2027 |\n| 6 | Last Date of Instruction | $3^\\text{rd}$ April 2027 |\n| 7 | Practical/ Project/ Thesis Examination | $7^\\text{th}$ to $13^\\text{th}$ April 2027 |\n| 8 | End Semester Theory Examination | $15^\\text{th}$ to $30^\\text{th}$ April 2027 |\n\n> **Note for Lateral Entry students:** The commencement of class and Midterm exam will be notified later depending upon the last date of admission.\n\n---\n\n## **3. EVENT WINDOW**\n\n| Sl. No. | Name of Event | Schedule |\n| :--- | :--- | :--- |\n| 1 | Inter/Intra University Sports | $30^\\text{th}$ November to $5^\\text{th}$ December 2026 |\n| 2 | Indigenous Sports | $5^\\text{th}$ to $6^\\text{th}$ February 2027 |\n| 3 | Gajajyoti, Bhubaneswar Campus | $10^\\text{th}$ to $12^\\text{th}$ February 2027 |\n| 4 | Gajajyoti Paralakhemundi Campus | $18^\\text{th}$ to $20^\\text{th}$ February 2027 |\n| 5 | Gajajyoti Chatrapur Campus | $24^\\text{th}$ February 2027 |\n| 6 | Gajajyoti Balasore Campus | $26^\\text{th}$ to $27^\\text{th}$ February 2027 |\n\n> **\\# Summer Internship Window:** $1^\\text{st}$ May to $30^\\text{th}$ June, 2027\n\n---\n\n**Signed by:**  \n**Anita Patra**  \nRegistrar"
+    },
+    {
+      "id": "file-1781421637294",
+      "fileName": "Academic Calender_2026-27_SoET_2nd, 3rd and 4th year_UG and PG Program.pdf",
+      "fileType": "pdf",
+      "uploadedBy": "admin",
+      "uploadedAt": "2026-06-14T07:20:37.294Z",
+      "description": "Instant Chat workspace attachment",
+      "extractedText": "Based on the provided document, here is the structured and comprehensive extraction of the **Academic Calendar (2026-27)** for the **School of Engineering and Technology (SoET)** at **Centurion University of Technology and Management, Odisha**.\n\n---\n\n# Centurion University of Technology and Management, Odisha\n## Academic Calendar: 2026-27\n**Programs:** Under Graduate and Post Graduate  \n**School:** School of Engineering and Technology (SoET)  \n**Target Batches:** 2nd, 3rd, and 4th Year\n\n---\n\n### I. ODD SEMESTER (3rd, 5th, and 7th Semesters)\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Subject Depository to be sent to ERP | 1st to 5th June 2026 |\n| **2.** | Subject Registration | 10th to 25th June 2026 |\n| **3.** | Timetable Configuration and uploading of Session Plan in ERP | 1st to 4th July 2026 |\n| **4.** | Commencement of Classes | 6th July 2026 |\n| **5.** | Mid Semester Examination | 7th to 11th September 2026 |\n| **6.** | Last Date of Instruction | 31st October 2026 |\n| **7.** | Practical/ Project/ Thesis Examination | 4th to 10th November 2026 |\n| **8.** | End Semester Theory Examination | 12th to 28th November 2026 |\n\n---\n\n### II. EVEN SEMESTER (4th, 6th, and 8th Semesters)\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Subject Depository to be sent to ERP | 20th to 25th November 2026 |\n| **2.** | Subject Registration | 30th November to 2nd December 2026 |\n| **3.** | Timetable Configuration and uploading of Session Plan in ERP | 3rd to 5th December 2026 |\n| **4.** | Commencement of Classes | 7th December 2026 |\n| **5.** | Mid Semester Examination | 27th January to 2nd February 2027 |\n| **6.** | Last Date of Instruction | 3rd April 2027 |\n| **7.** | Practical/ Project/ Thesis Examination | 7th to 13th April 2027 |\n| **8.** | End Semester Theory Examination | 15th to 30th April 2027 |\n\n*Note: For Lateral Entry students, the commencement of classes and Midterm exams will be notified later, depending on the final date of admission.*\n\n---\n\n### III. EVENT WINDOW\n\n| Sl. No. | Name of Event | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Inter/Intra University Sports | 30th November to 5th December 2026 |\n| **2.** | Indigenous Sports | 5th to 6th February 2027 |\n| **3.** | Gajajyoti, Bhubaneswar Campus | 10th to 12th February 2027 |\n| **4.** | Gajajyoti, Paralakhemundi Campus | 18th to 20th February 2027 |\n| **5.** | Gajajyoti, Chatrapur Campus | 24th February 2027 |\n| **6.** | Gajajyoti, Balasore Campus | 26th to 27th February 2027 |\n\n#### Additional Key Windows:\n* **Summer Internship Window:** 1st May to 30th June, 2027\n\n---\n\n**Authority Signature:**  \n*Anita Patra*  \n**Registrar**",
+      "summary": "Based on the provided document, here is the structured and comprehensive extraction of the **Academic Calendar (2026-27)** for the **School of Engineering and Technology (SoET)** at **Centurion University of Technology and Management, Odisha**.\n\n---\n\n# Centurion University of Technology and Management, Odisha\n## Academic Calendar: 2026-27\n**Programs:** Under Graduate and Post Graduate  \n**School:** School of Engineering and Technology (SoET)  \n**Target Batches:** 2nd, 3rd, and 4th Year\n\n---\n\n### I. ODD SEMESTER (3rd, 5th, and 7th Semesters)\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Subject Depository to be sent to ERP | 1st to 5th June 2026 |\n| **2.** | Subject Registration | 10th to 25th June 2026 |\n| **3.** | Timetable Configuration and uploading of Session Plan in ERP | 1st to 4th July 2026 |\n| **4.** | Commencement of Classes | 6th July 2026 |\n| **5.** | Mid Semester Examination | 7th to 11th September 2026 |\n| **6.** | Last Date of Instruction | 31st October 2026 |\n| **7.** | Practical/ Project/ Thesis Examination | 4th to 10th November 2026 |\n| **8.** | End Semester Theory Examination | 12th to 28th November 2026 |\n\n---\n\n### II. EVEN SEMESTER (4th, 6th, and 8th Semesters)\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Subject Depository to be sent to ERP | 20th to 25th November 2026 |\n| **2.** | Subject Registration | 30th November to 2nd December 2026 |\n| **3.** | Timetable Configuration and uploading of Session Plan in ERP | 3rd to 5th December 2026 |\n| **4.** | Commencement of Classes | 7th December 2026 |\n| **5.** | Mid Semester Examination | 27th January to 2nd February 2027 |\n| **6.** | Last Date of Instruction | 3rd April 2027 |\n| **7.** | Practical/ Project/ Thesis Examination | 7th to 13th April 2027 |\n| **8.** | End Semester Theory Examination | 15th to 30th April 2027 |\n\n*Note: For Lateral Entry students, the commencement of classes and Midterm exams will be notified later, depending on the final date of admission.*\n\n---\n\n### III. EVENT WINDOW\n\n| Sl. No. | Name of Event | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Inter/Intra University Sports | 30th November to 5th December 2026 |\n| **2.** | Indigenous Sports | 5th to 6th February 2027 |\n| **3.** | Gajajyoti, Bhubaneswar Campus | 10th to 12th February 2027 |\n| **4.** | Gajajyoti, Paralakhemundi Campus | 18th to 20th February 2027 |\n| **5.** | Gajajyoti, Chatrapur Campus | 24th February 2027 |\n| **6.** | Gajajyoti, Balasore Campus | 26th to 27th February 2027 |\n\n#### Additional Key Windows:\n* **Summer Internship Window:** 1st May to 30th June, 2027\n\n---\n\n**Authority Signature:**  \n*Anita Patra*  \n**Registrar**"
+    },
+    {
+      "id": "file-1781421713942",
+      "fileName": "Academic Calender_2026-27_SoET_2nd, 3rd and 4th year_UG and PG Program.pdf",
+      "fileType": "pdf",
+      "uploadedBy": "admin",
+      "uploadedAt": "2026-06-14T07:21:53.942Z",
+      "description": "Direct Chat prompt attachment context",
+      "extractedText": "Here is the structured extraction of the **Academic Calendar (2026-27)** for Centurion University of Technology and Management, Odisha, specifically for the Under Graduate (UG) and Post Graduate (PG) programs under the School of Engineering and Technology (SoET).\n\n---\n\n# **Centurion University of Technology and Management, Odisha**\n### **Academic Calendar: 2026-27**\n* **Target Programs:** Under Graduate (UG) and Post Graduate (PG) — School of Engineering and Technology (SoET)\n* **Target Semesters:** 2nd, 3rd, and 4th Year\n\n---\n\n## **1. ODD SEMESTER (3rd, 5th, and 7th Semesters)**\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Subject Depository to be sent to ERP | 1st to 5th June 2026 |\n| **2.** | Subject Registration | 10th to 25th June 2026 |\n| **3.** | Timetable Configuration and uploading of Session Plan in ERP | 1st to 4th July 2026 |\n| **4.** | **Commencement of Classes** | **6th July 2026** |\n| **5.** | Mid Semester Examination | 7th to 11th September 2026 |\n| **6.** | Last Date of Instruction | 31st October 2026 |\n| **7.** | Practical/ Project/ Thesis Examination | 4th to 10th November 2026 |\n| **8.** | **End Semester Theory Examination** | **12th to 28th November 2026** |\n\n---\n\n## **2. EVEN SEMESTER (4th, 6th, and 8th Semesters)**\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Subject Depository to be sent to ERP | 20th to 25th November 2026 |\n| **2.** | Subject Registration | 30th November to 2nd December 2026 |\n| **3.** | Timetable Configuration and uploading of Session Plan in ERP | 3rd to 5th December 2026 |\n| **4.** | **Commencement of Classes** | **7th December 2026** |\n| **5.** | Mid Semester Examination | 27th January to 2nd February 2027 |\n| **6.** | Last Date of Instruction | 3rd April 2027 |\n| **7.** | Practical/ Project/ Thesis Examination | 7th to 13th April 2027 |\n| **8.** | **End Semester Theory Examination** | **15th to 30th April 2027** |\n\n> 📌 **Note for Lateral Entry Students:** The commencement of class and Midterm exam will be notified later, depending upon the last date of admission.\n\n---\n\n## **3. EVENT WINDOW (Sports, Cultural Festivals, & Internships)**\n\n| Sl. No. | Name of Event | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Inter/Intra University Sports | 30th November to 5th December 2026 |\n| **2.** | Indigenous Sports | 5th to 6th February 2027 |\n| **3.** | Gajajyoti, Bhubaneswar Campus | 10th to 12th February 2027 |\n| **4.** | Gajajyoti, Paralakhemundi Campus | 18th to 20th February 2027 |\n| **5.** | Gajajyoti, Chatrapur Campus | 24th February 2027 |\n| **6.** | Gajajyoti, Balasore Campus | 26th to 27th February 2027 |\n\n### ☀️ **Summer Internship Window**\n* **Schedule:** 1st May to 30th June, 2027\n\n---\n\n**Authority Signatory:**  \n*Anita Patra*  \n**Registrar**",
+      "summary": "Here is the structured extraction of the **Academic Calendar (2026-27)** for Centurion University of Technology and Management, Odisha, specifically for the Under Graduate (UG) and Post Graduate (PG) programs under the School of Engineering and Technology (SoET).\n\n---\n\n# **Centurion University of Technology and Management, Odisha**\n### **Academic Calendar: 2026-27**\n* **Target Programs:** Under Graduate (UG) and Post Graduate (PG) — School of Engineering and Technology (SoET)\n* **Target Semesters:** 2nd, 3rd, and 4th Year\n\n---\n\n## **1. ODD SEMESTER (3rd, 5th, and 7th Semesters)**\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Subject Depository to be sent to ERP | 1st to 5th June 2026 |\n| **2.** | Subject Registration | 10th to 25th June 2026 |\n| **3.** | Timetable Configuration and uploading of Session Plan in ERP | 1st to 4th July 2026 |\n| **4.** | **Commencement of Classes** | **6th July 2026** |\n| **5.** | Mid Semester Examination | 7th to 11th September 2026 |\n| **6.** | Last Date of Instruction | 31st October 2026 |\n| **7.** | Practical/ Project/ Thesis Examination | 4th to 10th November 2026 |\n| **8.** | **End Semester Theory Examination** | **12th to 28th November 2026** |\n\n---\n\n## **2. EVEN SEMESTER (4th, 6th, and 8th Semesters)**\n\n| Sl. No. | Name of Activities | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Subject Depository to be sent to ERP | 20th to 25th November 2026 |\n| **2.** | Subject Registration | 30th November to 2nd December 2026 |\n| **3.** | Timetable Configuration and uploading of Session Plan in ERP | 3rd to 5th December 2026 |\n| **4.** | **Commencement of Classes** | **7th December 2026** |\n| **5.** | Mid Semester Examination | 27th January to 2nd February 2027 |\n| **6.** | Last Date of Instruction | 3rd April 2027 |\n| **7.** | Practical/ Project/ Thesis Examination | 7th to 13th April 2027 |\n| **8.** | **End Semester Theory Examination** | **15th to 30th April 2027** |\n\n> 📌 **Note for Lateral Entry Students:** The commencement of class and Midterm exam will be notified later, depending upon the last date of admission.\n\n---\n\n## **3. EVENT WINDOW (Sports, Cultural Festivals, & Internships)**\n\n| Sl. No. | Name of Event | Schedule |\n| :--- | :--- | :--- |\n| **1.** | Inter/Intra University Sports | 30th November to 5th December 2026 |\n| **2.** | Indigenous Sports | 5th to 6th February 2027 |\n| **3.** | Gajajyoti, Bhubaneswar Campus | 10th to 12th February 2027 |\n| **4.** | Gajajyoti, Paralakhemundi Campus | 18th to 20th February 2027 |\n| **5.** | Gajajyoti, Chatrapur Campus | 24th February 2027 |\n| **6.** | Gajajyoti, Balasore Campus | 26th to 27th February 2027 |\n\n### ☀️ **Summer Internship Window**\n* **Schedule:** 1st May to 30th June, 2027\n\n---\n\n**Authority Signatory:**  \n*Anita Patra*  \n**Registrar**"
+    }
+  ],
+  "scrapedUrls": [
+    {
+      "url": "https://cutm.ac.in/academic-calendar",
+      "title": "CUTM Academic Calendar 2025-26",
+      "lastScraped": "2026-05-29T18:00:00Z",
+      "content": "Centurion University Academic Session 2025-2026. Even Semester (4th Semester) runs from January 2026 to June 2026. Practical Examinations for Semester 4 occur between June 8th and June 14th, 2026. Registration for Semester 5 commences July 1st, 2026."
+    }
+  ]
+}
