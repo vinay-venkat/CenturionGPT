@@ -5,8 +5,9 @@ import fs from "fs";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import * as XLSX from "xlsx";
-import { StudentRecord, Notice, AcademicFile, ScrapedUrl, ChatMessage, FacultyRecord, AdminRecord } from "./src/types.js";
-import { connectDb, Student as StudentModel, Faculty as FacultyModel, Admin as AdminModel, Notice as NoticeModel, AcademicFile as AcademicFileModel, ScrapedUrl as ScrapedUrlModel } from "./db.js";
+import { StudentRecord, Notice, AcademicFile, ScrapedUrl, ChatMessage, FacultyRecord, AdminRecord } from "./src/types";
+import { connectDb, Student as StudentModel, Faculty as FacultyModel, Admin as AdminModel, Notice as NoticeModel, AcademicFile as AcademicFileModel, ScrapedUrl as ScrapedUrlModel } from "./db";
+
 
 const app = express();
 const PORT = 3000;
