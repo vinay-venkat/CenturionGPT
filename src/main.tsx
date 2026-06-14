@@ -8,21 +8,19 @@ const DEV_HOST_IP = "192.168.1.20";
 const DEV_PORT = "3000";
 
 const getApiBaseUrl = (): string => {
-  // Vite exposes env vars prefixed with VITE_ to the client
-  const envUrl = (import.meta as any).env?.VITE_API_URL;
-  if (envUrl) {
-    return envUrl;
-  }
   const isCapacitor = 
     window.location.origin.startsWith("capacitor:") || 
     (window.location.origin.startsWith("http://localhost") && !window.location.port) ||
     window.location.origin.startsWith("file:");
 
   if (isCapacitor) {
-    return `http://${DEV_HOST_IP}:${DEV_PORT}`;
+    // Vite exposes env vars prefixed with VITE_ to the client
+    const envUrl = (import.meta as any).env?.VITE_API_URL;
+    return envUrl || `http://${DEV_HOST_IP}:${DEV_PORT}`;
   }
   return "";
 };
+
 
 const apiBaseUrl = getApiBaseUrl();
 

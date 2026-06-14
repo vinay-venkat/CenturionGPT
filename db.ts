@@ -72,12 +72,13 @@ const ScrapedUrlSchema = new Schema({
   content: { type: String, required: true }
 });
 
-export const Student = mongoose.models.Student || mongoose.model('Student', StudentSchema);
-export const Faculty = mongoose.models.Faculty || mongoose.model('Faculty', FacultySchema);
-export const Admin = mongoose.models.Admin || mongoose.model('Admin', AdminSchema);
-export const Notice = mongoose.models.Notice || mongoose.model('Notice', NoticeSchema);
-export const AcademicFile = mongoose.models.AcademicFile || mongoose.model('AcademicFile', AcademicFileSchema);
-export const ScrapedUrl = mongoose.models.ScrapedUrl || mongoose.model('ScrapedUrl', ScrapedUrlSchema);
+export const Student = (mongoose.models.Student || mongoose.model('Student', StudentSchema)) as any;
+export const Faculty = (mongoose.models.Faculty || mongoose.model('Faculty', FacultySchema)) as any;
+export const Admin = (mongoose.models.Admin || mongoose.model('Admin', AdminSchema)) as any;
+export const Notice = (mongoose.models.Notice || mongoose.model('Notice', NoticeSchema)) as any;
+export const AcademicFile = (mongoose.models.AcademicFile || mongoose.model('AcademicFile', AcademicFileSchema)) as any;
+export const ScrapedUrl = (mongoose.models.ScrapedUrl || mongoose.model('ScrapedUrl', ScrapedUrlSchema)) as any;
+
 
 export async function connectDb() {
   const uri = process.env.MONGODB_URI;
