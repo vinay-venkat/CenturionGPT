@@ -72,12 +72,209 @@ const ScrapedUrlSchema = new Schema({
   content: { type: String, required: true }
 });
 
-export const Student = (mongoose.models.Student || mongoose.model('Student', StudentSchema)) as any;
-export const Faculty = (mongoose.models.Faculty || mongoose.model('Faculty', FacultySchema)) as any;
-export const Admin = (mongoose.models.Admin || mongoose.model('Admin', AdminSchema)) as any;
-export const Notice = (mongoose.models.Notice || mongoose.model('Notice', NoticeSchema)) as any;
-export const AcademicFile = (mongoose.models.AcademicFile || mongoose.model('AcademicFile', AcademicFileSchema)) as any;
-export const ScrapedUrl = (mongoose.models.ScrapedUrl || mongoose.model('ScrapedUrl', ScrapedUrlSchema)) as any;
+class ModelWrapper {
+  private mongooseModel: any;
+  private collectionKey: string;
+
+  constructor(mongooseModel: any, collectionKey: string) {
+    this.mongooseModel = mongooseModel;
+    this.collectionKey = collectionKey;
+  }
+
+  private isConnected() {
+    return mongoose.connection.readyState === 1;
+  }
+
+  async findOne(query: any) {
+    if (this.isConnected()) {
+      return this.mongooseModel.findOne(query);
+    }
+    const DB_FILE = path.join(process.cwd(), "server_db.json");
+    let data: any = {};
+    if (fs.existsSync(DB_FILE)) {
+      try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
+    }
+    const list = data[this.collectionKey] || [];
+    const item = list.find((item: any) => {
+      return Object.keys(query || {}).every(key => {
+        const val = query[key];
+        if (typeof val === 'object' && val !== null) {
+          if (val.$regex) {
+            const regex = typeof val.$regex === 'string' ? new RegExp(val.$regex, 'i') : val.$regex;
+            return regex.test(item[key] || '');
+          }
+        }
+        return String(item[key] || '').toLowerCase() === String(val || '').toLowerCase();
+      });
+    });
+    if (item) {
+      const doc = { ...item };
+      const colKey = this.collectionKey;
+      Object.defineProperty(doc, 'save', {
+        value: async function() {
+          let freshData: any = {};
+          if (fs.existsSync(DB_FILE)) {
+            try { freshData = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
+          }
+          const freshList = freshData[colKey] || [];
+          const idx = freshList.findIndex((x: any) => x.regNo === this.regNo || x.email === this.email || x.id === this.id || x.url === this.url);
+          if (idx !== -1) {
+            const toSave = { ...this };
+            delete toSave.save;
+            freshList[idx] = toSave;
+            try { fs.writeFileSync(DB_FILE, JSON.stringify(freshData, null, 2), 'utf-8'); } catch(e) {}
+          }
+        }.bind(doc),
+        writable: true,
+        configurable: true,
+        enumerable: false
+      });
+      return doc;
+    }
+    return null;
+  }
+
+  async find(query: any = {}) {
+    if (this.isConnected()) {
+      return this.mongooseModel.find(query);
+    }
+    const DB_FILE = path.join(process.cwd(), "server_db.json");
+    let data: any = {};
+    if (fs.existsSync(DB_FILE)) {
+      try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
+    }
+    const list = data[this.collectionKey] || [];
+    const results = list.filter((item: any) => {
+      return Object.keys(query || {}).every(key => {
+        return String(item[key] || '') === String(query[key] || '');
+      });
+    });
+    const chain = results;
+    Object.defineProperty(chain, 'sort', {
+      value: function(sortObj: any) {
+        const field = Object.keys(sortObj || {})[0];
+        if (!field) return this;
+        const order = sortObj[field];
+        return this.sort((a: any, b: any) => {
+          if (a[field] < b[field]) return order === -1 ? 1 : -1;
+          if (a[field] > b[field]) return order === -1 ? -1 : 1;
+          return 0;
+        });
+      }.bind(chain),
+      writable: true,
+      configurable: true,
+      enumerable: false
+    });
+    return chain;
+  }
+
+  async findOneAndUpdate(query: any, update: any, options: any = {}) {
+    if (this.isConnected()) {
+      return this.mongooseModel.findOneAndUpdate(query, update, options);
+    }
+    const DB_FILE = path.join(process.cwd(), "server_db.json");
+    let data: any = {};
+    if (fs.existsSync(DB_FILE)) {
+      try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
+    }
+    if (!data[this.collectionKey]) data[this.collectionKey] = [];
+    const list = data[this.collectionKey];
+    const idx = list.findIndex((item: any) => {
+      return Object.keys(query || {}).every(key => String(item[key] || '') === String(query[key] || ''));
+    });
+    const docUpdate = update.$set || update;
+    if (idx !== -1) {
+      list[idx] = { ...list[idx], ...docUpdate };
+      try { fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf-8'); } catch(e) {}
+      return list[idx];
+    } else if (options.upsert) {
+      const newDoc = { ...query, ...docUpdate };
+      list.push(newDoc);
+      try { fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf-8'); } catch(e) {}
+      return newDoc;
+    }
+    return null;
+  }
+
+  async create(doc: any) {
+    if (this.isConnected()) {
+      return this.mongooseModel.create(doc);
+    }
+    const DB_FILE = path.join(process.cwd(), "server_db.json");
+    let data: any = {};
+    if (fs.existsSync(DB_FILE)) {
+      try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
+    }
+    if (!data[this.collectionKey]) data[this.collectionKey] = [];
+    data[this.collectionKey].push(doc);
+    try { fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf-8'); } catch(e) {}
+    return doc;
+  }
+
+  async insertMany(docs: any[]) {
+    if (this.isConnected()) {
+      return this.mongooseModel.insertMany(docs);
+    }
+    const DB_FILE = path.join(process.cwd(), "server_db.json");
+    let data: any = {};
+    if (fs.existsSync(DB_FILE)) {
+      try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
+    }
+    if (!data[this.collectionKey]) data[this.collectionKey] = [];
+    data[this.collectionKey].push(...docs);
+    try { fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf-8'); } catch(e) {}
+    return docs;
+  }
+
+  async deleteOne(query: any) {
+    if (this.isConnected()) {
+      return this.mongooseModel.deleteOne(query);
+    }
+    const DB_FILE = path.join(process.cwd(), "server_db.json");
+    let data: any = {};
+    if (fs.existsSync(DB_FILE)) {
+      try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
+    }
+    const list = data[this.collectionKey] || [];
+    const beforeLength = list.length;
+    const filtered = list.filter((item: any) => {
+      return !Object.keys(query || {}).every(key => String(item[key] || '') === String(query[key] || ''));
+    });
+    data[this.collectionKey] = filtered;
+    try { fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf-8'); } catch(e) {}
+    return { deletedCount: beforeLength - filtered.length };
+  }
+
+  async countDocuments(query: any = {}) {
+    if (this.isConnected()) {
+      return this.mongooseModel.countDocuments(query);
+    }
+    const DB_FILE = path.join(process.cwd(), "server_db.json");
+    let data: any = {};
+    if (fs.existsSync(DB_FILE)) {
+      try { data = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8')); } catch(e) {}
+    }
+    const list = data[this.collectionKey] || [];
+    return list.filter((item: any) => {
+      return Object.keys(query || {}).every(key => String(item[key] || '') === String(query[key] || ''));
+    }).length;
+  }
+}
+
+const StudentMongoose = mongoose.models.Student || mongoose.model('Student', StudentSchema);
+const FacultyMongoose = mongoose.models.Faculty || mongoose.model('Faculty', FacultySchema);
+const AdminMongoose = mongoose.models.Admin || mongoose.model('Admin', AdminSchema);
+const NoticeMongoose = mongoose.models.Notice || mongoose.model('Notice', NoticeSchema);
+const AcademicFileMongoose = mongoose.models.AcademicFile || mongoose.model('AcademicFile', AcademicFileSchema);
+const ScrapedUrlMongoose = mongoose.models.ScrapedUrl || mongoose.model('ScrapedUrl', ScrapedUrlSchema);
+
+export const Student = new ModelWrapper(StudentMongoose, 'students') as any;
+export const Faculty = new ModelWrapper(FacultyMongoose, 'faculty') as any;
+export const Admin = new ModelWrapper(AdminMongoose, 'admins') as any;
+export const Notice = new ModelWrapper(NoticeMongoose, 'notices') as any;
+export const AcademicFile = new ModelWrapper(AcademicFileMongoose, 'files') as any;
+export const ScrapedUrl = new ModelWrapper(ScrapedUrlMongoose, 'scrapedUrls') as any;
+
 
 
 export async function connectDb() {
